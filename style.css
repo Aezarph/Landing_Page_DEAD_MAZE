@@ -1,0 +1,37 @@
+body {
+    background-image: url('src/imagens/Gemini_Generated_Image_r9k7crr9k7crr9k7.jpeg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    width: 1510px; 
+    height: 1510px; 
+    margin: 0; 
+}
+
+.titulo {
+    max-width: 100%;
+    text-align: center;
+    padding-top: 20px; 
+    display: block;
+    margin: 0 auto;
+    padding-right: 200px;
+}
+
+.titulo h1 img {
+    display: block;
+    margin: 0 auto;
+    width: 45%;
+    height: auto;
+}
+
+.frase {
+    font-family: 'special elite';
+    background-color:rgba(225,228,196,0.8);
+    color: black;
+    width: 50%;
+    margin: 150px;
+    padding: 15px;
+    text-align: center;
+}
+
+
+  
