@@ -87,7 +87,7 @@ body {
   background-color: rgba(225, 228, 196, 0.8);
   color: #000;
   max-width: 550px;
-  margin: 250px auto;
+  margin: 350px auto;
   padding: 28px 0px;
   text-align: center;
   border-radius: 8px;
@@ -95,6 +95,10 @@ body {
   font-size: 1.2rem;
   line-height: 1.5;
   border: 4px solid rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  animation: staticShake 0.5s infinite alternate;
 }
 
 .apresentacao img {
@@ -106,6 +110,89 @@ body {
   border-radius: 6px;
   box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
   border: 3px solid rgb(255, 255, 255, 0.1);
+}
+
+/* --- PASSO 3: LINHAS DE ESTÁTICA --- */
+
+/* Cria a primeira camada de linhas (brancas/transparentes) */
+.infojogo h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Deixa o texto clicável por baixo */
+  opacity: 0.15; /* Transparência da estática */
+  
+  /* Desenha as linhas */
+  background: 
+    linear-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 100%),
+    linear-gradient(transparent 0, transparent 50%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 52%, transparent 52%);
+  
+  background-size: 100% 10px, 100% 100px; /* Tamanho das linhas */
+  
+  /* Chama a animação que move as linhas */
+  animation: staticLines 4s infinite linear;
+}
+
+/* Cria a segunda camada (linhas pretas/transparentes) */
+.infojogo h3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.1; /* Um pouco mais sutil que a primeira */
+
+  /* Desenha linhas diferentes */
+  background: 
+    linear-gradient(rgba(0,0,0,0.8) 0, rgba(0,0,0,0.2) 2px, transparent 2px, transparent 100%),
+    linear-gradient(transparent 0, transparent 50%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.1) 52%, transparent 52%);
+  
+  background-size: 100% 12px, 100% 110px; /* Tamanhos diferentes */
+  
+  /* Chama a animação, mas invertida e em velocidade diferente */
+  animation: staticLines s infinite reverse;
+}
+
+/* --- PASSO 4: DEFINIÇÃO DAS ANIMAÇÕES --- */
+
+/* Animação de tremor da caixa (TV analógica) */
+@keyframes staticShake {
+  0% { 
+    transform: translateX(0px) translateY(0px); 
+    filter: brightness(1); 
+  }
+  25% { 
+    transform: translateX(1px) translateY(-1px); 
+    filter: brightness(1.1); /* Aumenta o brilho */
+  }
+  50% { 
+    transform: translateX(-1px) translateY(1px); 
+    filter: brightness(0.9); /* Diminui o brilho */
+  }
+  75% { 
+    transform: translateX(1px) translateY(1px); 
+    filter: brightness(1.05); 
+  }
+  100% { 
+    transform: translateX(-1px) translateY(-1px); 
+    filter: brightness(1); 
+  }
+}
+
+/* Animação de movimento das linhas de estática (rolagem) */
+@keyframes staticLines {
+  0% { 
+    background-position: 0 0, 0 0; 
+  }
+  100% { 
+    /* Move o background verticalmente para simular rolagem */
+    background-position: 0 100px, 0 500px; 
+  }
 }
 
 @media (max-width: 1380px) {
