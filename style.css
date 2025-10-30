@@ -17,11 +17,11 @@ body {
     center center,
     50% 0%;
 
-  animation: fogPulse 30s ease-in-out infinite alternate;
+  animation: fogPulseDesktop 6s ease-in-out infinite alternate;
   
   color: #e6e6e6;
   font-family: 'Special Elite', cursive;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow-x: hidden;
   display: flex;
@@ -30,7 +30,19 @@ body {
   justify-content: flex-start;
 }
 
-@keyframes fogPulse {
+@keyframes fogPulseDesktop {
+  0% { 
+    background-position: center center, 50% 0%; 
+  }
+  50% { 
+    background-position: center center, 50% 100%; 
+  }
+  100% { 
+    background-position: center center, 50% 0%; 
+  }
+}
+
+@keyframes fogPulseMobile {
   0% { 
     background-position: center center, 50% 0%; 
   }
@@ -56,34 +68,67 @@ body {
   filter: drop-shadow(0 0 15px rgb(229, 230, 219));
 }
 
-.frase {
+.frase{
   background-color: rgba(225, 228, 196, 0.8);
   color: #000;
-  width: 70%;
   max-width: 750px;
   margin: 45px auto;
   padding: 18px 20px;
   text-align: center;
   border-radius: 6px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-  font-size: 1.2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  font-size: 1.3rem;
   line-height: 1.5;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+}
+
+.apresentacao h3 {
+  background-color: rgba(225, 228, 196, 0.8);
+  color: #000;
+  max-width: 550px;
+  margin: 250px auto;
+  padding: 28px 0px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+.apresentacao img {
+  display: block;     
+  width: 100%;       
+  max-width: 750px;   
+  height: auto;       
+  margin: 70px auto;  
+  border-radius: 6px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
+  border: 3px solid rgb(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1380px) {
+  .titulo img { width: 60%; max-width: 600px;}
+
+  .frase {
+    width: 85%;
+    max-width: 650px;
+    font-size: 0.9rem;
+    margin: 40px auto;
+  }
+  
+  body {
+      animation: fogPulseMobile 12s ease-in-out infinite alternate;
+    }
+
 }
 
 @media (max-width: 768px) {
-  .titulo img { width: 60%; }
-  .frase {
-    width: 85%;
-    font-size: 1rem;
-    margin: 40px auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .titulo img { width: 70%; }
+  .titulo img { width: 70%; max-width: 600px; }
   .frase {
     width: 90%;
+    max-width: 600px;
     font-size: 0.95rem;
     padding: 12px;
   }
