@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -5,22 +6,6 @@
 }
 
 body {
-  background-image: 
-    linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.75) 100%),
-    radial-gradient(circle at center center, #64664acc, #000000ee);
-
-  background-size: 
-    cover,
-    200% 200%;
-
-  background-position: 
-    center center,
-    50% 0%;
-
-  animation: fogPulseDesktop 6s ease-in-out infinite alternate;
-  
-  color: #e6e6e6;
-  font-family: 'Special Elite', cursive;
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
@@ -28,51 +13,47 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-}
 
-@keyframes fogPulseDesktop {
-  0% { 
-    background-position: center center, 50% 0%; 
-  }
-  50% { 
-    background-position: center center, 50% 100%; 
-  }
-  100% { 
-    background-position: center center, 50% 0%; 
-  }
-}
+ 
+  color: #e6e6e6;
+  font-family: 'Special Elite', cursive;
 
-@keyframes fogPulseMobile {
-  0% { 
-    background-position: center center, 50% 0%; 
-  }
-  50% { 
-    background-position: center center, 50% 100%; 
-  }
-  100% { 
-    background-position: center center, 50% 0%; 
-  }
+ 
+  background-color: #5c6742;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.75) 100%),
+    radial-gradient(circle at center center, #64664acc, #000000dd);
+  
+  background-size: 
+    cover,
+    200% 200%;
+  background-position: 
+    center center,
+    50% 0%;
+
+  animation: fogPulse 6s ease-in-out infinite alternate;
 }
 
 .titulo {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .titulo img {
   display: block;
-  margin: 0 auto;
+  margin: -135px auto 40px;
   width: 95%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
-  filter: drop-shadow(0 0 15px rgb(229, 230, 219));
+  filter: drop-shadow(0 0 20px rgb(255, 255, 255));
+  transform: translateX(5px);
 }
 
-.frase{
+.frase {
   background-color: rgba(225, 228, 196, 0.8);
   color: #000;
   max-width: 750px;
-  margin: 45px auto;
+  margin: -135px auto 40px;
   padding: 18px 20px;
   text-align: center;
   border-radius: 6px;
@@ -83,11 +64,22 @@ body {
   font-weight: bold;
 }
 
+.apresentacao video {
+  display: block;
+  width: 95vw;
+  max-width: 750px;
+  height: auto;
+  margin: 55px auto;
+  border-radius: 6px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
+  border: 3px solid rgb(255, 255, 255, 0.1);
+}
+
 .apresentacao h3 {
   background-color: rgba(225, 228, 196, 0.8);
   color: #000;
   max-width: 550px;
-  margin: 350px auto;
+  margin: 0px auto; /* Margem desktop */
   padding: 28px 0px;
   text-align: center;
   border-radius: 8px;
@@ -101,43 +93,20 @@ body {
   animation: staticShake 0.5s infinite alternate;
 }
 
-.apresentacao img {
-  display: block;     
-  width: 100%;       
-  max-width: 750px;   
-  height: auto;       
-  margin: 70px auto;  
-  border-radius: 6px;
-  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
-  border: 3px solid rgb(255, 255, 255, 0.1);
+.parallax-wrapper {
+  margin-top: 300px;
+  margin-bottom: 200px;
+  padding-top: 450px;
+  padding-bottom: 450px;
+  background-image: url(src/imagens/tumblr_inline_p8n3pxbacc1vkxyzl_1280.gif); 
+  background-position: center;  
+  background-repeat: no-repeat; 
+  background-size: 1300px 850px;      
+  position: relative;
+  border-radius: 100px; 
 }
 
-/* --- PASSO 3: LINHAS DE ESTÁTICA --- */
-
-/* Cria a primeira camada de linhas (brancas/transparentes) */
-.infojogo h3::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Deixa o texto clicável por baixo */
-  opacity: 0.15; /* Transparência da estática */
-  
-  /* Desenha as linhas */
-  background: 
-    linear-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 100%),
-    linear-gradient(transparent 0, transparent 50%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 52%, transparent 52%);
-  
-  background-size: 100% 10px, 100% 100px; /* Tamanho das linhas */
-  
-  /* Chama a animação que move as linhas */
-  animation: staticLines 4s infinite linear;
-}
-
-/* Cria a segunda camada (linhas pretas/transparentes) */
-.infojogo h3::after {
+.apresentacao h3::before {
   content: "";
   position: absolute;
   top: 0;
@@ -145,22 +114,240 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.1; /* Um pouco mais sutil que a primeira */
+  opacity: 0.15;
+  
+  background: 
+    linear-gradient(rgba(255,255,255,0.8) 0, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 100%),
+    linear-gradient(transparent 0, transparent 50%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.1) 52%, transparent 52%);
+  
+  background-size: 100% 10px, 100% 100px;
+  animation: staticLines 4s infinite linear;
+}
 
-  /* Desenha linhas diferentes */
+.apresentacao h3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.1;
+
   background: 
     linear-gradient(rgba(0,0,0,0.8) 0, rgba(0,0,0,0.2) 2px, transparent 2px, transparent 100%),
     linear-gradient(transparent 0, transparent 50%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.1) 52%, transparent 52%);
   
-  background-size: 100% 12px, 100% 110px; /* Tamanhos diferentes */
-  
-  /* Chama a animação, mas invertida e em velocidade diferente */
-  animation: staticLines s infinite reverse;
+  background-size: 100% 12px, 100% 110px;
+  animation: staticLines 3.5s infinite reverse;
 }
 
-/* --- PASSO 4: DEFINIÇÃO DAS ANIMAÇÕES --- */
+.trailer-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 200px;
+  border-radius: 8px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
 
-/* Animação de tremor da caixa (TV analógica) */
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.trailer-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.aviso-abandono {
+  height: 250px;
+  text-align: center;
+  margin: 400px auto;
+  padding: 60px 20px;
+  background-color:rgba(225, 228, 196, 0.8);
+  color: #000000; 
+  border-top: 2px solid #333; 
+  border-bottom: 2px solid #333;
+  border-radius: 40px;
+}
+
+.aviso-abandono h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  color: #010101;
+  margin-bottom: 15px;
+  margin-top: -15px;
+}
+
+.aviso-abandono p {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 650px; 
+  margin: 15px auto; 
+}
+
+.historia {
+  text-align: center;
+  margin: 150px auto;
+  max-width: 900px;
+  color: #e6e6e6;
+}
+
+.historia h2 {
+  font-size: 2rem;
+  text-shadow: 0 0 20px #000;
+  margin-bottom: 20px;
+}
+
+.historia p {
+  background-color: rgba(225, 228, 196, 0.8);
+  color: #000;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+}
+
+.historia img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
+}
+
+.sobre-jogo {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #e6e6e6;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sobre-jogo h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.sobre-jogo ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.galeria {
+  text-align: center;
+  color: #e6e6e6;
+  margin: 255px auto;
+  max-width: 1000px;
+}
+
+.galeria h2 {
+  font-family: 'Rubik 80s Fade', sans-serif;
+  font-size: 3rem;  
+  font-weight: normal;
+  
+  margin-bottom: 30px;
+}
+
+.galeria .imagens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.galeria img {
+  width:calc(70% - 14px);
+  border-radius: 8px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+.galeria .imagens a {
+  width: calc(100% - 14px); 
+  text-decoration: none; 
+}
+
+.lightbox {
+  visibility: hidden;
+  opacity: 0; 
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox:target {
+  visibility: visible;
+  opacity: 1; 
+}
+
+.lightbox img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 4px;
+}
+
+.lightbox .fechar {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2.5rem;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  transition: color 0.2s ease;
+}
+
+.lightbox .fechar:hover {
+  color: rgba(255, 255, 255, 1); /* Branco sólido no hover */
+}
+
+.creditos {
+  font-family: 'Roboto', sans-serif; 
+  font-weight: normal;                 
+  text-align: center;
+  padding: 40px 0;
+  color: #ffffff;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 100px;
+}
+
+@keyframes fogPulse {
+  0% { 
+    background-position: center center, 50% 0%; 
+  }
+  50% { 
+    background-position: center center, 50% 100%; 
+  }
+  100% { 
+    background-position: center center, 50% 0%; 
+  }
+}
+
 @keyframes staticShake {
   0% { 
     transform: translateX(0px) translateY(0px); 
@@ -168,11 +355,11 @@ body {
   }
   25% { 
     transform: translateX(1px) translateY(-1px); 
-    filter: brightness(1.1); /* Aumenta o brilho */
+    filter: brightness(1.1);
   }
   50% { 
     transform: translateX(-1px) translateY(1px); 
-    filter: brightness(0.9); /* Diminui o brilho */
+    filter: brightness(0.9);
   }
   75% { 
     transform: translateX(1px) translateY(1px); 
@@ -184,39 +371,134 @@ body {
   }
 }
 
-/* Animação de movimento das linhas de estática (rolagem) */
 @keyframes staticLines {
   0% { 
     background-position: 0 0, 0 0; 
   }
   100% { 
-    /* Move o background verticalmente para simular rolagem */
     background-position: 0 100px, 0 500px; 
   }
 }
 
 @media (max-width: 1380px) {
-  .titulo img { width: 60%; max-width: 600px;}
+  body {
+    animation: fogPulse 12s ease-in-out infinite alternate;
+  }
+  
+  .titulo img { 
+    width: 80%; 
+    max-width: 600px;
+    margin: -80px auto 30px;
+  }
 
   .frase {
     width: 85%;
     max-width: 650px;
-    font-size: 0.9rem;
-    margin: 40px auto;
+    font-size: 1.1rem;
+    padding: 12px;
+    margin: -90px auto 30px;
+  }
+
+  .apresentacao video {
+    width: 85%; 
+    max-width: 750px;
+    margin: 50px auto; 
   }
   
-  body {
-      animation: fogPulseMobile 12s ease-in-out infinite alternate;
-    }
+  .apresentacao h3 {
+    width: 85%; 
+    max-width: 500px; 
+    margin: 350px auto 400px; 
+    padding: 24px 0; 
+    font-size: 1.1rem; 
+  }
 
-}
+  .trailer-container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 40px auto 200px;
+  }
+
+  .parallax-wrapper {
+    margin: -50px auto 150px;
+    background-size: 1800px 700px;
+  }
+} 
 
 @media (max-width: 768px) {
-  .titulo img { width: 70%; max-width: 600px; }
-  .frase {
-    width: 90%;
-    max-width: 600px;
-    font-size: 0.95rem;
-    padding: 12px;
+  .titulo img { 
+    width: 70%; 
+    max-width: 600px; 
+    margin: -50px auto 30px;
   }
+
+  .galeria h2{
+    font-size: 42px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .frase {
+    width: 85%;
+    max-width: 600px;
+    font-size: 1.1rem;
+    padding: 12px;
+    margin: -50px auto 30px;
+  }
+
+  .apresentacao video {
+    width: 90%; 
+    max-width: 600px;
+    margin: 80px auto; 
+  }
+  
+  .apresentacao h3 {
+    width: 90%; 
+    max-width: 400px; 
+    margin: -40px auto; 
+    padding: 20px 0;
+    font-size: 1rem; 
+  }
+
+ .parallax-wrapper {
+  margin: -50px auto 150px;
+  background-size: 1800px 500px;
 }
+
+.trailer-container {
+  width: 100vw;
+  max-width: 100%;
+  margin: 20px 0 120px;
+}
+
+.aviso-abandono h2 {
+  font-size: 25px;
+  margin-top: -40px;
+}
+
+.aviso-abandono p {
+  font-size: 18px;
+}
+}
+
+@media screen and (min-width: 510px) and (max-width: 768px) and (max-height: 1024px) {
+  .frase {
+    font-size: 20px;   
+    margin: -60px auto 30px;
+    width: 85%;
+    max-width: 650px;
+    padding: 12px;
+  } 
+
+  .aviso-abandono {
+    padding-top: 85px;
+  } 
+  .aviso-abandono h2 {
+    font-size: 28px;
+    margin-top: -55px;
+  }
+ 
+  .aviso-abandono p {
+    font-size: 20px;
+  }
+} 
