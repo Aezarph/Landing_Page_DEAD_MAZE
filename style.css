@@ -176,16 +176,16 @@ body {
 }
 
 .aviso-abandono h2 {
-  font-family: 'Arial', sans-serif;
+  font-family: 'DM Serif Text', serif;
   font-size: 2.5rem;
   color: #010101;
   margin-bottom: 15px;
-  margin-top: -15px;
+  margin-top: -30px;
 }
 
 .aviso-abandono p {
-  font-family: 'Special Elite', monospace;
-  font-size: 1.1rem;
+  font-family: 'WDXL Lubrifont JP N', sans-serif;
+  font-size: 24px;
   line-height: 1.7;
   max-width: 650px; 
   margin: 15px auto; 
@@ -473,11 +473,11 @@ body {
 
 .aviso-abandono h2 {
   font-size: 25px;
-  margin-top: -40px;
+  margin-top: -25px;
 }
 
 .aviso-abandono p {
-  font-size: 18px;
+  font-size: 20px;
 }
 }
 
@@ -494,8 +494,8 @@ body {
     padding-top: 85px;
   } 
   .aviso-abandono h2 {
-    font-size: 28px;
-    margin-top: -55px;
+    font-size: 30px;
+    margin-top: -40px;
   }
  
   .aviso-abandono p {
