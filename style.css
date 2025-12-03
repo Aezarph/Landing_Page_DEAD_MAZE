@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -14,11 +13,11 @@ body {
   align-items: center;
   justify-content: flex-start;
 
- 
+  
   color: #e6e6e6;
   font-family: 'Special Elite', cursive;
 
- 
+  
   background-color: #5c6742;
   background-image: 
     linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.75) 100%),
@@ -34,6 +33,7 @@ body {
   animation: fogPulse 6s ease-in-out infinite alternate;
 }
 
+
 .titulo {
   text-align: center;
   margin-top: 10px;
@@ -41,12 +41,12 @@ body {
 
 .titulo img {
   display: block;
-  margin: -135px auto 40px;
+  margin: -95px auto 40px;
   width: 95%;
   max-width: 600px;
   height: auto;
   filter: drop-shadow(0 0 20px rgb(255, 255, 255));
-  transform: translateX(5px);
+  transform: translateX(1px);
 }
 
 .frase {
@@ -93,19 +93,6 @@ body {
   animation: staticShake 0.5s infinite alternate;
 }
 
-.parallax-wrapper {
-  margin-top: 300px;
-  margin-bottom: 200px;
-  padding-top: 450px;
-  padding-bottom: 450px;
-  background-image: url(src/imagens/tumblr_inline_p8n3pxbacc1vkxyzl_1280.gif); 
-  background-position: center;  
-  background-repeat: no-repeat; 
-  background-size: 1300px 850px;      
-  position: relative;
-  border-radius: 100px; 
-}
-
 .apresentacao h3::before {
   content: "";
   position: absolute;
@@ -140,6 +127,69 @@ body {
   
   background-size: 100% 12px, 100% 110px;
   animation: staticLines 3.5s infinite reverse;
+}
+
+
+.cta-section {
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(40, 40, 30, 0.9) 0%, rgba(20, 20, 10, 0.95) 100%);
+  padding: 60px 20px;
+  border-radius: 12px;
+  margin: 360px auto;
+  max-width: 700px;
+  box-shadow: 0 0 30px rgba(255, 150, 50, 0.1);
+}
+
+.cta-container h2 {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-size: 35px;
+  color: #ffb347;
+  margin-bottom: 33px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(255, 120, 40, 0.4);
+}
+
+.cta-container p {
+  color: #e8e6d8;
+  font-size: 30px;
+  font-family: 'WDXL Lubrifont JP N', sans-serif;
+  max-width: 520px;
+  margin: 0 auto 25px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #ff8c42, #ffb347);
+  color: #1c1b17;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 160, 70, 0.3);
+  margin: 17px auto;
+  font-family: 'WDXL Lubrifont JP N', sans-serif;
+  font-size: 20px;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 180, 80, 0.6);
+  background: linear-gradient(90deg, #ffb347, #ffd480);
+}
+
+.parallax-wrapper {
+  margin-top: 300px;
+  margin-bottom: 200px;
+  padding-top: 450px;
+  padding-bottom: 450px;
+  background-image: url(src/imagens/tumblr_inline_p8n3pxbacc1vkxyzl_1280.gif); 
+  background-position: center;   
+  background-repeat: no-repeat; 
+  background-size: 1300px 850px;      
+  position: relative;
+  border-radius: 100px; 
 }
 
 .trailer-container {
@@ -253,19 +303,24 @@ body {
   font-family: 'Rubik 80s Fade', sans-serif;
   font-size: 3rem;  
   font-weight: normal;
-  
   margin-bottom: 30px;
 }
 
 .galeria .imagens {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column; 
+  align-items: center;   
   gap: 20px;
 }
 
+.galeria .imagens a {
+  width: 70%; 
+  text-decoration: none; 
+}
+
 .galeria img {
-  width:calc(70% - 14px);
+  width: 100%; 
+  display: block; 
   border-radius: 8px;
   box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8);
   transition: transform 0.3s ease;
@@ -273,11 +328,6 @@ body {
 
 .galeria img:hover {
   transform: scale(1.05);
-}
-
-.galeria .imagens a {
-  width: calc(100% - 14px); 
-  text-decoration: none; 
 }
 
 .lightbox {
@@ -312,7 +362,6 @@ body {
   position: fixed;
   top: 15px;
   right: 25px;
-
   color: rgba(255, 255, 255, 0.7);
   font-size: 2.5rem;
   text-decoration: none;
@@ -322,12 +371,12 @@ body {
 }
 
 .lightbox .fechar:hover {
-  color: rgba(255, 255, 255, 1); /* Branco sólido no hover */
+  color: rgba(255, 255, 255, 1);
 }
 
 .creditos {
   font-family: 'Roboto', sans-serif; 
-  font-weight: normal;                 
+  font-weight: normal; 
   text-align: center;
   padding: 40px 0;
   color: #ffffff;
@@ -336,6 +385,9 @@ body {
   margin-top: 100px;
 }
 
+/* =========================================
+   ANIMAÇÕES (KEYFRAMES)
+   ========================================= */
 @keyframes fogPulse {
   0% { 
     background-position: center center, 50% 0%; 
@@ -380,6 +432,11 @@ body {
   }
 }
 
+/* =========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================= */
+
+/* --- Tablet*/
 @media (max-width: 1380px) {
   body {
     animation: fogPulse 12s ease-in-out infinite alternate;
@@ -419,17 +476,54 @@ body {
     margin: 40px auto 200px;
   }
 
+  .aviso-abandono {
+   padding-top: 120px; 
+   padding-bottom: 80px;
+}
+
+.aviso-abandono h2 {
+  margin-top: 40px;  
+  margin-bottom: 20px;
+}
+
+.aviso-abandono p {
+  margin-top: 20px;
+}
+
+  .cta-section {
+    background-image: none; 
+    background-color: rgba(225, 228, 196, 0.8); 
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(1px);
+  }
+
+  .cta-container h2 {
+    color: #cd6d32;
+    font-size: 28px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  }
+
+  .cta-container p {
+    font-size: 25px ;
+    color:#000;
+  }
+
   .parallax-wrapper {
-    margin: -50px auto 150px;
+    margin-top: -50px;
+    margin-bottom: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
     background-size: 1800px 700px;
   }
 } 
 
 @media (max-width: 768px) {
   .titulo img { 
-    width: 70%; 
+    width: 80%; 
     max-width: 600px; 
     margin: -50px auto 30px;
+    transform: translateX(3px);
   }
 
   .galeria h2{
@@ -458,47 +552,98 @@ body {
     margin: -40px auto; 
     padding: 20px 0;
     font-size: 1rem; 
+  } 
+  
+  .cta-section {
+    background-image: none; 
+    background-color: rgba(225, 228, 196, 0.8); 
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
   }
 
- .parallax-wrapper {
-  margin: -50px auto 150px;
-  background-size: 1800px 500px;
-}
+  .cta-container h2 {
+    color: #cd6d32;
+    font-size: 28px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  }
 
-.trailer-container {
-  width: 100vw;
-  max-width: 100%;
-  margin: 20px 0 120px;
-}
+  .cta-container p {
+    font-size: 25px ;
+    color:#000;
+  }
 
-.aviso-abandono h2 {
-  font-size: 25px;
-  margin-top: -25px;
-}
+  .parallax-wrapper {
+    margin-top: -50px;
+    margin-bottom: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-size: 1800px 500px;
+  }
 
-.aviso-abandono p {
-  font-size: 20px;
-}
-}
-
-@media screen and (min-width: 510px) and (max-width: 768px) and (max-height: 1024px) {
-  .frase {
-    font-size: 20px;   
-    margin: -60px auto 30px;
-    width: 85%;
-    max-width: 650px;
-    padding: 12px;
-  } 
+  .trailer-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0 120px;
+  }
 
   .aviso-abandono {
-    padding-top: 85px;
-  } 
-  .aviso-abandono h2 {
-    font-size: 30px;
-    margin-top: -40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 30px 20px;
   }
- 
+  
+  .aviso-abandono h2 {
+    font-size: 25px;
+    margin-top: -2px;
+    transform: translateX(8px);
+  }
+
   .aviso-abandono p {
     font-size: 20px;
   }
-} 
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  
+  .aviso-abandono {
+    margin-top: 0px !important; 
+    margin-bottom: 50px;
+    padding: 60px 20px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; 
+    max-width: 800px;
+  }
+
+  .aviso-abandono h2 {
+    margin-top: 0; 
+    font-size: 2rem; 
+  }
+
+  .aviso-abandono p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+  }
+
+  .cta-section {
+    background-image: none !important;
+    background-color: rgba(225, 228, 196, 0.8) !important;
+    
+    width: 90% !important; 
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .cta-container h2 {
+    color: #cd6d32;
+    font-size: 28px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  }
+
+  .cta-container p {
+    font-size: 25px;
+    color: #000;
+  }
+}
