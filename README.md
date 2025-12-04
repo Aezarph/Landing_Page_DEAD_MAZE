@@ -6,15 +6,17 @@ Esta é uma Landing Page desenvolvida como tributo ao jogo **Dead Maze**. O obje
 
 ## 🎨 Layout
 
-Você pode visualizar o layout do projeto através [deste link](insira_link_do_figma_ou_print).
+<img width="411" height="713" alt="landing page dead maze" src="https://github.com/user-attachments/assets/eb3f8ad6-7673-4f03-8f7b-f9f9f1f6dba8" />
+
+Você pode visualizar o projeto através [deste link](https://aezarph.github.io/Landing_Page_DEAD_MAZE/).
 
 
 
 ## 🛠 Tecnologias Utilizadas
 
-* **HTML5** (Semântico)
-* **CSS3** (Flexbox/Grid, Animações)
+* **HTML5** 
+* **CSS3** 
 
-## ✨ Funcionalidades
+
 
 
